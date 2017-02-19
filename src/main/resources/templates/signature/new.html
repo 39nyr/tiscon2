@@ -17,10 +17,42 @@
                 <div class="ui middle aligned center aligned grid">
                     <div class="center column">
                         <h1 class="ui center aligned header">キャンペーン作成</h1>
-                        <form class="ui form" method="post" action="/auth/campaign">
-                            <div class="field"><label>タイトル</label><input type="text"></div>
+
+                        <form class="ui form" method="post" action="/auth/campaign"><!--登録ボタンを押した時に送られる情報-->
+                            <div class="field"><label>タイトル</label><input type="text" name="title" ></div>
+                            <div class="field"><label>説明文</label><input type="text" name="statement"></div>
+                            <div class="field"><label>目標人数</label><input type="text" name="goal"></div>
+
                             <button type="submit" class="ui primary button">作成</button>
                         </form>
+
+                            <!--<form class="ui form" method="post" action="/auth/campaign"><!--登録ボタンを押した後の処理名-->
+                                <!--th:action="@{~/create}"
+                                th:classappend="${user.hasErrors()} ? 'error'">-->
+                               <!-- <div class="field" th:classappend="${user.hasErrors('title')} ? 'error'">
+                                    <input type="text" name="title" placeholder="タイトル"
+                                           th:value="${user.title != null} ? ${user.title}" />
+                                    <ul class="ui pointing red basic label" th:if="${user.hasErrors('title')}">
+                                        <li th:each="message : ${user.getErrors('title')}" th:text="${message}"></li>
+                                    </ul>
+                                </div>
+                                <div class="field"  th:classappend="${user.hasErrors('statement')} ? 'error'">
+                                    <input type="text" name="statement" placeholder="内容"
+                                           th:value="(${user.statement}!=null)?${user.statement}"/>
+                                    <ul class="ui pointing red basic label" th:if="${user.hasErrors('statement')}">
+                                        <li th:each="message : ${user.getErrors('statement')}" th:text="${message}"></li>
+                                    </ul>
+                                </div>
+                                <div class="field" th:classappend="${user.hasErrors('goal')} ? 'error'">
+                                    <input type="text" name="goal" placeholder="目標人数"
+                                           th:value="(${user.goal}!=null)?${user.goal}"/>
+                                    <ul class="ui pointing red basic label" th:if="${user.hasErrors('goal')}">
+                                        <li th:each="message : ${user.getErrors('goal')}" th:text="${message}"></li>
+                                    </ul>
+                                </div>
+
+                                <button class="ui fluid red button">登録</button>
+                            </form> -->
                     </div>
                 </div>
             </div>
